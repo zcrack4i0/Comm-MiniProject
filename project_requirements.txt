@@ -1,0 +1,182 @@
+
+--- Page 1 ---
+Cairo University  
+Faculty of Engineering 
+CCEE-CCEC Programs 
+Communications II 
+EECS 316 Fall 25-26 
+Course Mini-Project 
+ 
+   
+ 
+ 
+Important notes: 
+ 
+Groups of students with a maximum of 4 students per group 
+• The report should be Clear and Organized and must be commented. 
+• The Code must be Clear and Organized and must be commented. 
+• All figures should be correctly labeled.  
+• The cheater and cheatee of any part of the project will get 0 marks. 
+• The project is due 20/12/2025 at midnight. 
+• Late policy is -2 grades per day. 
+• The Hard Deadline is  22/12/2025 at midnight. No Submmition is allowed after it. 
+• The allowed Tool is Matlab. 
+• Any AI Tool is not allowed for coding. 
+ 
+Points will be deducted if any of the instructions above are not followed. 
+Project details 
+The project aims  to introduce the students to the simulation of using Gram -Schmidt 
+orthogonalization to analyze signal space signals. 
+  
+--- Page 2 ---
+Cairo University  
+Faculty of Engineering 
+CCEE-CCEC Programs 
+Communications II 
+EECS 316 Fall 25-26 
+Course Mini-Project 
+ 
+   
+ 
+ 
+Part 1: 
+ 
+• 1.1. Gram-Schmidt Orthogonalization:  
+ 
+Write a function that calculates the Gram-Schmidt orthonormal bases functions (ph1, phi 2, …., phi m) for 
+two or more input signals (𝑠1 & 𝑠2, … . . 𝑠𝑛) each one of them is 1×N vector. 
+ 
+You can name the function { [ Phis, m ] = Basis_Cal (Signals, n) where, Phis is m×N, and m is the 
+number of the bases functions, Signals is n×N, and n is the number of the signals} 
+ 
+• 1.2. Signal Space representation:  
+ 
+Write a function that calculates Signal Space representation for a given signal one orthonormal bases 
+functions. 
+ 
+You can name the function { [signal_vector] = Signal_Rep (Phis, signal) where, signal_vector is 1×m} 
+ 
+ 
+• 1.3. Decision Boundaries:  
+ 
+Write a function that Draw the decision boundaries for the given signals one orthonormal bases functions. 
+for only m = 1,2. 
+You can name the function { Decision_boundaries (Phis, Signals)}. 
+You can use “scatter & scatter3” in Matlab. 
+ 
+• 1.4. Signal Space Analysis:  
+ 
+Write a function that calculates the Euclidian Distance and cross correlation for a given signals and print 
+All signals that have the minimum distance between them and the corresponding (distance, cross 
+correlation). 
+ 
+• 1.5. AWGN in Signal Space:  
+ 
+Consider the Channel Add AWGN on the Signals with zero mean and No/2 variance  
+Write a function that can add AWGN noise to the signals then plot the noisy signals on signal space,  
+(Label the original signals which are not suffer from the noise). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 3 ---
+Cairo University  
+Faculty of Engineering 
+CCEE-CCEC Programs 
+Communications II 
+EECS 316 Fall 25-26 
+Course Mini-Project 
+ 
+   
+ 
+ 
+Part 2: 
+• 2.1. Hand Analysis Calculations:  
+ 
+Solve the Following Three Problems to help you to analyze your code  
+  
+Problem 1: 
+𝑆1 = { −3      0 < 𝑡 < 0.75
+   0.7      0.75 ≤ 𝑡 < 1 , 𝑆2 = { 7.5      0 < 𝑡 < 0.75
+  −1.75      0.75 ≤ 𝑡 < 1 
+Problem 2: 
+𝑆1 = {1      0 < 𝑡 < 1
+0          𝑒𝑙𝑠𝑒      , 𝑆2 = { 1      0 < 𝑡 < 0.75
+  −1      0.75 ≤ 𝑡 < 1 
+Problem 3: 
+𝑆1 = {1      0 < 𝑡 < 1
+0          𝑒𝑙𝑠𝑒      , 𝑠2 =  −𝑠1, 𝑆3 = { 2      0 < 𝑡 < 0.75
+  0.5      0.75 ≤ 𝑡 < 1 , 𝑠4 =  −𝑠3 
+ 
+• 2.2. Code Test 1:  
+ 
+Solve the Previous Three Problems by using your first 4 functions only. (hint use can use your sampling 
+time  ts= 40 ms). 
+  
+• 2.3. Requirements:  
+ 
+1- Submit a single .PDF file that contains: 
+a- Part 2.1 Hand Analysis. 
+b- Part 2.2 Outputs (Signals Drawing, Basis Functions Drawings, Signal Space Coefficients in vector 
+form, signals representation with Decision Boundaries, the min distances and it’s signals)  
+c- Noise Exercise. 
+d- All your Codes at the end. 
+2- Submit a single Code file that contains all the parts 
+3- The figures in your report should be clear. All figures should have a clear legend, and the axes should be 
+properly labelled with proper font size.  
+4- Please keep your report neat, clean, and organized.  
+5- You are responsible for the clarity and visibility of your figures, analysis, comments, code, etc.  
+6- Students must not copy any material from any reference (without proper citation), any another project 
+or any AI tool. Plagiarism check shall be carried out, and the project will be considered invalid (fail) in 
+case of plagiarism. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- Page 4 ---
+Cairo University  
+Faculty of Engineering 
+CCEE-CCEC Programs 
+Communications II 
+EECS 316 Fall 25-26 
+Course Mini-Project 
+ 
+   
+ 
+ 
+Noise Exercise: 
+For the following set of signals  
+ 
+𝑆1 = {1      0 < 𝑡 < 1
+0          𝑒𝑙𝑠𝑒      , 𝑠2 =  −2𝑠1, 𝑆3 = { 1.5      0 < 𝑡 < 0.75
+  0.7      0.75 ≤ 𝑡 < 1 , 𝑠4 =  −3𝑠3 
+ 
+Find the bases functions then draw the signals with decision boundaries the simulate your channel with noise 
+like 𝑬𝟏/𝑵𝒐 =  10 , 5 , 0 , −5 , −10 𝑑𝐵, Which generate a (50 noisy sample) then plot then on the signals space 
+representation. 
+Notes : 
+1- Make the original noiseless signal markers look like circles, while the noisy signal markers should look 
+like crosses . 
+2- For each signal, create 50 noisy samples and plot them using the same color. You can use the scatter 
+function in MATLAB. 
+ 
+3- Add a comment for each of the five figures explaining how the noise affects the signal and approximately 
+how many errors occur. 
+ 
+  
+ 
