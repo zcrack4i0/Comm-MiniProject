@@ -16,9 +16,14 @@ from signal_space_analysis import (
 # Set random seed for reproducibility
 np.random.seed(42)
 
-# Sampling time: ts = 40 ms = 0.04 s
 ts = 0.04  # 40 ms
 
+
+def handle_logs(message):
+    print(f"\n{message}")
+    with open('logs.txt', 'a') as f:
+        f.write(f"\n{message}")
+    
 
 def solve_problem_1():
     """
@@ -28,9 +33,9 @@ def solve_problem_1():
     S2 = { 7.5     0 < t < 0.75
           -1.75    0.75 ≤ t < 1
     """
-    print("\n" + "="*80)
-    print("PROBLEM 1")
-    print("="*80)
+    handle_logs("\n" + "="*80)
+    handle_logs("PROBLEM 1")
+    handle_logs("="*80)
     
     # Time vector
     t = np.arange(0, 1, ts)
@@ -47,31 +52,27 @@ def solve_problem_1():
     plot_signals(t, Signals, "Problem 1: Original Signals", 
                 labels=['S1', 'S2'])
     
-    # Calculate basis functions
-    Phis, m = Basis_Cal(Signals, n)
-    print(f"\nNumber of basis functions: m = {m}")
-    print(f"Basis functions shape: {Phis.shape}")
+    # Part 1.1: Calculate basis functions using Gram-Schmidt Orthogonalization
+    Phis, m = Basis_Cal(Signals, n)  # ← Part 1.1: Basis_Cal function
+    handle_logs(f"\nNumber of basis functions: m = {m}")
+    handle_logs(f"Basis functions shape: {Phis.shape}")
     
     # Plot basis functions
     plot_basis_functions(t, Phis, "Problem 1: Orthonormal Basis Functions")
     
-    # Signal space representation
-    print("\nSignal Space Coefficients:")
+    # Part 1.2: Signal space representation
+    handle_logs("\nSignal Space Coefficients:")
     for i in range(n):
-        vec = Signal_Rep(Phis, Signals[i, :])
-        print(f"Signal {i+1} (S{i+1}): {vec}")
+        vec = Signal_Rep(Phis, Signals[i, :])  # ← Part 1.2: Signal_Rep function
+        handle_logs(f"Signal {i+1} (S{i+1}): {vec}")
     
-    # Decision boundaries
+    # Part 1.3: Decision boundaries
     if m <= 2:
-        Decision_boundaries(Phis, Signals)
+        Decision_boundaries(Phis, Signals)  # ← Part 1.3: Decision_boundaries function
     
-    # Signal space analysis
-    distances, cross_correlations = Signal_Space_Analysis(Phis, Signals)
+    # Part 1.4: Signal space analysis
+    distances, cross_correlations = Signal_Space_Analysis(Phis, Signals)  # ← Part 1.4: Signal_Space_Analysis function
     
-    # AWGN test
-    No_over_2 = 0.1
-    AWGN_Signal_Space(Phis, Signals, No_over_2, 
-                     "Problem 1: AWGN in Signal Space")
     
     return Phis, Signals, t
 
@@ -84,9 +85,9 @@ def solve_problem_2():
     S2 = { 1      0 < t < 0.75
           -1      0.75 ≤ t < 1
     """
-    print("\n" + "="*80)
-    print("PROBLEM 2")
-    print("="*80)
+    handle_logs("\n" + "="*80)
+    handle_logs("PROBLEM 2")
+    handle_logs("="*80)
     
     # Time vector
     t = np.arange(0, 1, ts)
@@ -103,31 +104,27 @@ def solve_problem_2():
     plot_signals(t, Signals, "Problem 2: Original Signals", 
                 labels=['S1', 'S2'])
     
-    # Calculate basis functions
-    Phis, m = Basis_Cal(Signals, n)
-    print(f"\nNumber of basis functions: m = {m}")
-    print(f"Basis functions shape: {Phis.shape}")
+    # Part 1.1: Calculate basis functions using Gram-Schmidt Orthogonalization
+    Phis, m = Basis_Cal(Signals, n)  # ← Part 1.1: Basis_Cal function
+    handle_logs(f"\nNumber of basis functions: m = {m}")
+    handle_logs(f"Basis functions shape: {Phis.shape}")
     
     # Plot basis functions
     plot_basis_functions(t, Phis, "Problem 2: Orthonormal Basis Functions")
     
-    # Signal space representation
-    print("\nSignal Space Coefficients:")
+    # Part 1.2: Signal space representation
+    handle_logs("\nSignal Space Coefficients:")
     for i in range(n):
-        vec = Signal_Rep(Phis, Signals[i, :])
-        print(f"Signal {i+1} (S{i+1}): {vec}")
+        vec = Signal_Rep(Phis, Signals[i, :])  # ← Part 1.2: Signal_Rep function
+        handle_logs(f"Signal {i+1} (S{i+1}): {vec}")
     
-    # Decision boundaries
+    # Part 1.3: Decision boundaries
     if m <= 2:
-        Decision_boundaries(Phis, Signals)
+        Decision_boundaries(Phis, Signals)  # ← Part 1.3: Decision_boundaries function
     
-    # Signal space analysis
-    distances, cross_correlations = Signal_Space_Analysis(Phis, Signals)
+    # Part 1.4: Signal space analysis
+    distances, cross_correlations = Signal_Space_Analysis(Phis, Signals)  # ← Part 1.4: Signal_Space_Analysis function
     
-    # AWGN test
-    No_over_2 = 0.1
-    AWGN_Signal_Space(Phis, Signals, No_over_2, 
-                     "Problem 2: AWGN in Signal Space")
     
     return Phis, Signals, t
 
@@ -142,9 +139,9 @@ def solve_problem_3():
            0.5    0.75 ≤ t < 1
     S4 = -S3
     """
-    print("\n" + "="*80)
-    print("PROBLEM 3")
-    print("="*80)
+    handle_logs("\n" + "="*80)
+    handle_logs("PROBLEM 3")
+    handle_logs("="*80)
     
     # Time vector
     t = np.arange(0, 1, ts)
@@ -163,31 +160,27 @@ def solve_problem_3():
     plot_signals(t, Signals, "Problem 3: Original Signals", 
                 labels=['S1', 'S2 = -S1', 'S3', 'S4 = -S3'])
     
-    # Calculate basis functions
-    Phis, m = Basis_Cal(Signals, n)
-    print(f"\nNumber of basis functions: m = {m}")
-    print(f"Basis functions shape: {Phis.shape}")
+    # Part 1.1: Calculate basis functions using Gram-Schmidt Orthogonalization
+    Phis, m = Basis_Cal(Signals, n)  # ← Part 1.1: Basis_Cal function
+    handle_logs(f"\nNumber of basis functions: m = {m}")
+    handle_logs(f"Basis functions shape: {Phis.shape}")
     
     # Plot basis functions
     plot_basis_functions(t, Phis, "Problem 3: Orthonormal Basis Functions")
     
-    # Signal space representation
-    print("\nSignal Space Coefficients:")
+    # Part 1.2: Signal space representation
+    handle_logs("\nSignal Space Coefficients:")
     for i in range(n):
-        vec = Signal_Rep(Phis, Signals[i, :])
-        print(f"Signal {i+1} (S{i+1}): {vec}")
+        vec = Signal_Rep(Phis, Signals[i, :])  # ← Part 1.2: Signal_Rep function
+        handle_logs(f"Signal {i+1} (S{i+1}): {vec}")
     
-    # Decision boundaries
+    # Part 1.3: Decision boundaries
     if m <= 2:
-        Decision_boundaries(Phis, Signals)
+        Decision_boundaries(Phis, Signals)  # ← Part 1.3: Decision_boundaries function
     
-    # Signal space analysis
-    distances, cross_correlations = Signal_Space_Analysis(Phis, Signals)
+    # Part 1.4: Signal space analysis
+    distances, cross_correlations = Signal_Space_Analysis(Phis, Signals)  # ← Part 1.4: Signal_Space_Analysis function
     
-    # AWGN test
-    No_over_2 = 0.1
-    AWGN_Signal_Space(Phis, Signals, No_over_2, 
-                     "Problem 3: AWGN in Signal Space")
     
     return Phis, Signals, t
 
@@ -206,9 +199,9 @@ def noise_exercise():
     simulate channel with noise for E1/No = 10, 5, 0, -5, -10 dB
     Generate 50 noisy samples and plot them on signal space.
     """
-    print("\n" + "="*80)
-    print("NOISE EXERCISE")
-    print("="*80)
+    handle_logs("\n" + "="*80)
+    handle_logs("NOISE EXERCISE")
+    handle_logs("="*80)
     
     # Time vector
     t = np.arange(0, 1, ts)
@@ -227,29 +220,29 @@ def noise_exercise():
     plot_signals(t, Signals, "Noise Exercise: Original Signals", 
                 labels=['S1', 'S2 = -2*S1', 'S3', 'S4 = -3*S3'])
     
-    # Calculate basis functions
-    Phis, m = Basis_Cal(Signals, n)
-    print(f"\nNumber of basis functions: m = {m}")
-    print(f"Basis functions shape: {Phis.shape}")
+    # Part 1.1: Calculate basis functions using Gram-Schmidt Orthogonalization
+    Phis, m = Basis_Cal(Signals, n)  # ← Part 1.1: Basis_Cal function
+    handle_logs(f"\nNumber of basis functions: m = {m}")
+    handle_logs(f"Basis functions shape: {Phis.shape}")
     
     # Plot basis functions
     plot_basis_functions(t, Phis, "Noise Exercise: Orthonormal Basis Functions")
     
-    # Signal space representation
-    print("\nSignal Space Coefficients:")
+    # Part 1.2: Signal space representation
+    handle_logs("\nSignal Space Coefficients:")
     signal_vectors = []
     for i in range(n):
-        vec = Signal_Rep(Phis, Signals[i, :])
+        vec = Signal_Rep(Phis, Signals[i, :])  # ← Part 1.2: Signal_Rep function
         signal_vectors.append(vec)
-        print(f"Signal {i+1} (S{i+1}): {vec}")
+        handle_logs(f"Signal {i+1} (S{i+1}): {vec}")
     signal_vectors = np.array(signal_vectors)
     
-    # Decision boundaries
+    # Part 1.3: Decision boundaries
     if m <= 2:
-        Decision_boundaries(Phis, Signals)
+        Decision_boundaries(Phis, Signals)  # ← Part 1.3: Decision_boundaries function
     
-    # Signal space analysis
-    distances, cross_correlations = Signal_Space_Analysis(Phis, Signals)
+    # Part 1.4: Signal space analysis
+    distances, cross_correlations = Signal_Space_Analysis(Phis, Signals)  # ← Part 1.4: Signal_Space_Analysis function
     
     # Calculate E1 (energy of first signal)
     E1 = np.sum(S1**2) * ts  # Energy = integral of signal squared
@@ -271,11 +264,11 @@ def noise_exercise():
         No = E1 / E1_No_linear
         No_over_2 = No / 2
         
-        print(f"\nE1/No = {E1_No_dB} dB")
-        print(f"  E1 = {E1:.6f}")
-        print(f"  E1/No (linear) = {E1_No_linear:.6f}")
-        print(f"  No = {No:.6f}")
-        print(f"  No/2 = {No_over_2:.6f}")
+        handle_logs(f"\nE1/No = {E1_No_dB} dB")
+        handle_logs(f"  E1 = {E1:.6f}")
+        handle_logs(f"  E1/No (linear) = {E1_No_linear:.6f}")
+        handle_logs(f"  No = {No:.6f}")
+        handle_logs(f"  No/2 = {No_over_2:.6f}")
         
         # Generate 50 noisy samples for each signal
         all_noisy_vectors = []
@@ -285,8 +278,8 @@ def noise_exercise():
                 # Add AWGN noise
                 noise = np.random.normal(0, np.sqrt(No_over_2), N)
                 noisy_signal = Signals[i, :] + noise
-                # Convert to signal space
-                noisy_vec = Signal_Rep(Phis, noisy_signal)
+                # Part 1.2: Convert to signal space
+                noisy_vec = Signal_Rep(Phis, noisy_signal)  # ← Part 1.2: Signal_Rep function (for noisy signals)
                 signal_noisy_vectors.append(noisy_vec)
             all_noisy_vectors.append(np.array(signal_noisy_vectors))
         
@@ -358,10 +351,10 @@ def noise_exercise():
         total_samples = n * num_samples
         error_rate = error_count / total_samples * 100
         
-        print(f"  Error Analysis:")
-        print(f"    Total samples: {total_samples}")
-        print(f"    Errors (misclassified): {error_count}")
-        print(f"    Error rate: {error_rate:.2f}%")
+        handle_logs(f"  Error Analysis:")
+        handle_logs(f"    Total samples: {total_samples}")
+        handle_logs(f"    Errors (misclassified): {error_count}")
+        handle_logs(f"    Error rate: {error_rate:.2f}%")
         
         # Add comment about noise effect
         if E1_No_dB >= 10:
@@ -375,17 +368,12 @@ def noise_exercise():
         else:
             comment = "Very low SNR: Severe noise spread. Very high error rate. Signals are barely distinguishable."
         
-        print(f"  Comment: {comment}")
+        handle_logs(f"  Comment: {comment}")
     
     return Phis, Signals, t
 
 
 if __name__ == "__main__":
-    print("\n" + "="*80)
-    print("COMMUNICATIONS II - SIGNAL SPACE ANALYSIS PROJECT")
-    print("EECS 316 Fall 25-26")
-    print("Cairo University - Faculty of Engineering")
-    print("="*80)
     
     # Solve Problem 1
     Phis1, Signals1, t1 = solve_problem_1()
@@ -399,9 +387,10 @@ if __name__ == "__main__":
     # Noise Exercise
     Phis_noise, Signals_noise, t_noise = noise_exercise()
     
-    print("\n" + "="*80)
-    print("ALL PROBLEMS COMPLETED SUCCESSFULLY!")
-    print("="*80)
-    print("\nAll plots have been generated and displayed.")
-    print("Check the console output for detailed analysis results.")
+    handle_logs("\n" + "="*80)
+    handle_logs("ALL PROBLEMS COMPLETED SUCCESSFULLY!")
+    handle_logs("="*80)
+
+
+
 

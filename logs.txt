@@ -1,0 +1,290 @@
+
+
+================================================================================
+PROBLEM 1
+================================================================================
+
+Number of basis functions: m = 1
+Basis functions shape: (1, 25)
+
+Signal Space Coefficients:
+Signal 1 (S1): [13.18863147]
+Signal 2 (S2): [-32.97157867]
+
+======================================================================
+SIGNAL SPACE ANALYSIS
+======================================================================
+
+Number of signals: 2
+Number of basis functions: 1
+
+----------------------------------------------------------------------
+Euclidean Distances and Cross Correlations:
+----------------------------------------------------------------------
+
+Euclidean Distance Matrix:
+
+================================================================================
+PROBLEM 1
+================================================================================
+
+Number of basis functions: m = 1
+Basis functions shape: (1, 25)
+
+Signal Space Coefficients:
+Signal 1 (S1): [13.18863147]
+Signal 2 (S2): [-32.97157867]
+======================================================================
+SIGNAL SPACE ANALYSIS
+======================================================================
+
+Number of signals: 2
+Number of basis functions: 1
+
+----------------------------------------------------------------------
+Euclidean Distances and Cross Correlations:
+----------------------------------------------------------------------
+
+Euclidean Distance Matrix:
+       S1    S2  
+S1   0.000046.1602
+S2  46.1602 0.0000
+
+Cross Correlation Matrix:
+       S1    S2  
+S1   1.0000-1.0000
+S2  -1.0000 1.0000
+
+----------------------------------------------------------------------
+Minimum Distance Analysis:
+----------------------------------------------------------------------
+Minimum Euclidean Distance: 46.160210
+
+Signal pairs with minimum distance:
+  Signal 1 <-> Signal 2:
+    Distance: 46.160210
+    Cross Correlation: -1.000000
+  Signal 2 <-> Signal 1:
+    Distance: 46.160210
+    Cross Correlation: -1.000000
+======================================================================
+
+
+
+================================================================================
+PROBLEM 2
+================================================================================
+
+Number of basis functions: m = 2
+Basis functions shape: (2, 25)
+
+Signal Space Coefficients:
+Signal 1 (S1): [5.0000000e+00 4.4408921e-16]
+Signal 2 (S2): [2.6       4.2708313]
+======================================================================
+SIGNAL SPACE ANALYSIS
+======================================================================
+
+Number of signals: 2
+Number of basis functions: 2
+
+----------------------------------------------------------------------
+Euclidean Distances and Cross Correlations:
+----------------------------------------------------------------------
+
+Euclidean Distance Matrix:
+       S1    S2  
+S1   0.0000 4.8990
+S2   4.8990 0.0000
+
+Cross Correlation Matrix:
+       S1    S2  
+S1   1.0000 0.5200
+S2   0.5200 1.0000
+
+----------------------------------------------------------------------
+Minimum Distance Analysis:
+----------------------------------------------------------------------
+Minimum Euclidean Distance: 4.898979
+
+Signal pairs with minimum distance:
+  Signal 1 <-> Signal 2:
+    Distance: 4.898979
+    Cross Correlation: 0.520000
+  Signal 2 <-> Signal 1:
+    Distance: 4.898979
+    Cross Correlation: 0.520000
+======================================================================
+
+
+
+================================================================================
+PROBLEM 3
+================================================================================
+
+Number of basis functions: m = 2
+Basis functions shape: (2, 25)
+
+Signal Space Coefficients:
+Signal 1 (S1): [5.00000000e+00 5.55111512e-16]
+Signal 2 (S2): [-5.00000000e+00 -5.55111512e-16]
+Signal 3 (S3): [8.2        3.20312348]
+Signal 4 (S4): [-8.2        -3.20312348]
+======================================================================
+SIGNAL SPACE ANALYSIS
+======================================================================
+
+Number of signals: 4
+Number of basis functions: 2
+
+----------------------------------------------------------------------
+Euclidean Distances and Cross Correlations:
+----------------------------------------------------------------------
+
+Euclidean Distance Matrix:
+       S1    S2    S3    S4  
+S1   0.000010.0000 4.527713.5831
+S2  10.0000 0.000013.5831 4.5277
+S3   4.527713.5831 0.000017.6068
+S4  13.5831 4.527717.6068 0.0000
+
+Cross Correlation Matrix:
+       S1    S2    S3    S4  
+S1   1.0000-1.0000 0.9315-0.9315
+S2  -1.0000 1.0000-0.9315 0.9315
+S3   0.9315-0.9315 1.0000-1.0000
+S4  -0.9315 0.9315-1.0000 1.0000
+
+----------------------------------------------------------------------
+Minimum Distance Analysis:
+----------------------------------------------------------------------
+Minimum Euclidean Distance: 4.527693
+
+Signal pairs with minimum distance:
+  Signal 1 <-> Signal 3:
+    Distance: 4.527693
+    Cross Correlation: 0.931457
+  Signal 2 <-> Signal 4:
+    Distance: 4.527693
+    Cross Correlation: 0.931457
+  Signal 3 <-> Signal 1:
+    Distance: 4.527693
+    Cross Correlation: 0.931457
+  Signal 4 <-> Signal 2:
+    Distance: 4.527693
+    Cross Correlation: 0.931457
+======================================================================
+
+
+
+================================================================================
+NOISE EXERCISE
+================================================================================
+
+Number of basis functions: m = 2
+Basis functions shape: (2, 25)
+
+Signal Space Coefficients:
+Signal 1 (S1): [5.00000000e+00 2.33146835e-15]
+Signal 2 (S2): [-1.0000000e+01 -4.6629367e-15]
+Signal 3 (S3): [6.54       1.70833252]
+Signal 4 (S4): [-19.62        -5.12499756]
+======================================================================
+SIGNAL SPACE ANALYSIS
+======================================================================
+
+Number of signals: 4
+Number of basis functions: 2
+
+----------------------------------------------------------------------
+Euclidean Distances and Cross Correlations:
+----------------------------------------------------------------------
+
+Euclidean Distance Matrix:
+       S1    S2    S3    S4  
+S1   0.000015.0000 2.300025.1478
+S2  15.0000 0.000016.628010.9000
+S3   2.300016.6280 0.000027.0378
+S4  25.147810.900027.0378 0.0000
+
+Cross Correlation Matrix:
+       S1    S2    S3    S4  
+S1   1.0000-1.0000 0.9675-0.9675
+S2  -1.0000 1.0000-0.9675 0.9675
+S3   0.9675-0.9675 1.0000-1.0000
+S4  -0.9675 0.9675-1.0000 1.0000
+
+----------------------------------------------------------------------
+Minimum Distance Analysis:
+----------------------------------------------------------------------
+Minimum Euclidean Distance: 2.300000
+
+Signal pairs with minimum distance:
+  Signal 1 <-> Signal 3:
+    Distance: 2.300000
+    Cross Correlation: 0.967536
+  Signal 3 <-> Signal 1:
+    Distance: 2.300000
+    Cross Correlation: 0.967536
+======================================================================
+
+
+
+E1/No = 10 dB
+  E1 = 1.000000
+  E1/No (linear) = 10.000000
+  No = 0.100000
+  No/2 = 0.050000
+  Error Analysis:
+    Total samples: 200
+    Errors (misclassified): 0
+    Error rate: 0.00%
+  Comment: High SNR: Noise has minimal effect. Very few errors occur. Signals are clearly distinguishable.
+
+E1/No = 5 dB
+  E1 = 1.000000
+  E1/No (linear) = 3.162278
+  No = 0.316228
+  No/2 = 0.158114
+  Error Analysis:
+    Total samples: 200
+    Errors (misclassified): 1
+    Error rate: 0.50%
+  Comment: Moderate-high SNR: Some noise spread visible. Low error rate. Signals mostly distinguishable.
+
+E1/No = 0 dB
+  E1 = 1.000000
+  E1/No (linear) = 1.000000
+  No = 1.000000
+  No/2 = 0.500000
+  Error Analysis:
+    Total samples: 200
+    Errors (misclassified): 2
+    Error rate: 1.00%
+  Comment: Moderate SNR: Noticeable noise spread. Moderate error rate. Some signal overlap.
+
+E1/No = -5 dB
+  E1 = 1.000000
+  E1/No (linear) = 0.316228
+  No = 3.162278
+  No/2 = 1.581139
+  Error Analysis:
+    Total samples: 200
+    Errors (misclassified): 15
+    Error rate: 7.50%
+  Comment: Low SNR: Significant noise spread. High error rate. Considerable signal overlap.
+
+E1/No = -10 dB
+  E1 = 1.000000
+  E1/No (linear) = 0.100000
+  No = 10.000000
+  No/2 = 5.000000
+  Error Analysis:
+    Total samples: 200
+    Errors (misclassified): 25
+    Error rate: 12.50%
+  Comment: Very low SNR: Severe noise spread. Very high error rate. Signals are barely distinguishable.
+
+================================================================================
+ALL PROBLEMS COMPLETED SUCCESSFULLY!
+================================================================================
