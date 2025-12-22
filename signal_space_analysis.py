@@ -250,7 +250,7 @@ def Signal_Space_Analysis(Phis, Signals):
     for i in range(n):
         handle_logs(f"S{i+1}  ", end="")
         for j in range(n):
-            handle_logs(f"{distances[i, j]:7.4f}", end="")
+            handle_logs(f"{distances[i, j]:7.4f} ", end="")
         handle_logs()
     
     # handle_logs cross correlation matrix
@@ -262,7 +262,7 @@ def Signal_Space_Analysis(Phis, Signals):
     for i in range(n):
         handle_logs(f"S{i+1}  ", end="")
         for j in range(n):
-            handle_logs(f"{cross_correlations[i, j]:7.4f}", end="")
+            handle_logs(f"{cross_correlations[i, j]:7.4f} ", end="")
         handle_logs()
     
     # handle_logs minimum distance pairs
